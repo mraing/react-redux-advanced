@@ -22,11 +22,11 @@ export default (state = defaultState, action) => {
       return newState
     // 删除数据
     case DEL_ITEM:
-      newState.list.splice(action.value, 1)
+      newState.list.splice(action.index, 1)
       return newState
     // 获取数据
     case GET_LIST:
-      newState.list = action.value
+      newState.list = action.data.list
       return newState
     default:
       break;

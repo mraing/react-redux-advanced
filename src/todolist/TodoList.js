@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import store from '../store'
-import {inputChangeAction, saveItemAction, delItemAction, getList} from '../store/actionCreators'
+import {inputChangeAction, saveItemAction, delItemAction, getTodoList} from '../store/actionCreators'
 import TodoListUI from './TodoListUI'
-import axios from 'axios'
 
 class TodoList extends Component {
   constructor(props) {
@@ -31,19 +30,8 @@ class TodoList extends Component {
 
   // 生命周期函数 - 挂载之前
   componentDidMount () {
-    this.getData()
-  }
-
-  // 请求 JSON 数据
-  getData () {
-    axios.get('https://easy-mock.com/mock/5d4a4b9ea644025f212848a2/reactd-emo/react-redux-axios')
-    .then(res => {
-      const action = getList(res.data.data.list)
-      store.dispatch(action)
-    })
-    .catch(error => {
-      console.log('请求出错'+error)
-    })
+    const action = getTodoList()
+    store.dispatch(action)
   }
 
   // 监听数据
