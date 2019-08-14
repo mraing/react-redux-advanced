@@ -1,15 +1,9 @@
-import { INPUT_CHANGE, SAVE_ITEM, DEL_ITEM } from './actionType'
+import { INPUT_CHANGE, SAVE_ITEM, DEL_ITEM, GET_LIST } from './actionType'
 
 // 初始数据
 const defaultState = {
   inputValue: '',
-  list: [
-    '张三',
-    '李四',
-    '王五',
-    '赵六',
-    '风花雪月'
-  ]
+  list: []
 }
 
 export default (state = defaultState, action) => {
@@ -29,6 +23,10 @@ export default (state = defaultState, action) => {
     // 删除数据
     case DEL_ITEM:
       newState.list.splice(action.value, 1)
+      return newState
+    // 获取数据
+    case GET_LIST:
+      newState.list = action.value
       return newState
     default:
       break;

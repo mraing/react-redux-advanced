@@ -2,8 +2,7 @@ import React from 'react'
 import { Input, Button, List } from 'antd'
 import './TodoList.css'
 
-// 无状态组件
-
+// 无状态组件 性能要比class要好，可以用无状态的组件 尽量用无状态组件
 const TodoListUI = (props) => {
   return (
     <div className="todolist-wrapper">
