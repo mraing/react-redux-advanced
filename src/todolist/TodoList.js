@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import store from '../store'
-import {inputChangeAction, saveItemAction, delItemAction, getTodoList} from '../store/actionCreators'
+import {getMyListAction, inputChangeAction, saveItemAction, delItemAction} from '../store/actionCreators'
 import TodoListUI from './TodoListUI'
 
 class TodoList extends Component {
@@ -30,8 +30,9 @@ class TodoList extends Component {
 
   // 生命周期函数 - 挂载之前
   componentDidMount () {
-    const action = getTodoList()
+    const action = getMyListAction()
     store.dispatch(action)
+    console.log(action)
   }
 
   // 监听数据

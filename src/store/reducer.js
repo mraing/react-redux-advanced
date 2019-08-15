@@ -1,4 +1,4 @@
-import { INPUT_CHANGE, SAVE_ITEM, DEL_ITEM, GET_LIST } from './actionType'
+import { INPUT_CHANGE, SAVE_ITEM, DEL_ITEM , GET_LIST} from './actionType'
 
 // 初始数据
 const defaultState = {
@@ -24,7 +24,7 @@ export default (state = defaultState, action) => {
     case DEL_ITEM:
       newState.list.splice(action.index, 1)
       return newState
-    // 获取数据
+    // // 获取数据
     case GET_LIST:
       newState.list = action.data.list
       return newState
